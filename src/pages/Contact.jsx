@@ -31,7 +31,7 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("https://formspree.io/f/xgojqgzg", {
+      const response = await fetch(VITE_FORMSPREE_CONTACT_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

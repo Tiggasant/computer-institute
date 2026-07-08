@@ -36,7 +36,7 @@ export default function Admission() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("https://formspree.io/f/mnjkrejb", {
+      const response = await fetch(VITE_FORMSPREE_ADMISSION_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
