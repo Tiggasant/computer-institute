@@ -1,0 +1,23 @@
+import { useEffect } from "react";
+
+/**
+ * Lightweight SEO helper — sets document title and meta description per
+ * page without pulling in a full head-management library. For advanced
+ * needs (structured data, OG tags per route) swap this for react-helmet-async.
+ */
+export default function Seo({ title, description }) {
+  useEffect(() => {
+    if (title) document.title = title;
+    if (description) {
+      let tag = document.querySelector('meta[name="description"]');
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute("name", "description");
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", description);
+    }
+  }, [title, description]);
+
+  return null;
+}
