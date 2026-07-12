@@ -34,7 +34,7 @@ export default function Gallery() {
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
                   category === cat
                     ? "bg-ink-900 text-white border-ink-900"
-                    : "bg-white text-slate-ink border-ink-100 hover:border-signal-500 hover:text-signal-700"
+                    : "bg-white text-ink-600 border-ink-100 hover:border-signal-500 hover:text-signal-700"
                 }`}
               >
                 {cat}

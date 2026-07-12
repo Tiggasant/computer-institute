@@ -1,5 +1,51 @@
 import { primaryContact } from "../../data/branches";
 
+// Add floating animations
+const floatingStyles = `
+  @keyframes floatingPulse {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  @keyframes whatsappGlow {
+    0%, 100% {
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4), 0 0 20px rgba(37, 211, 102, 0.2);
+    }
+    50% {
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6), 0 0 40px rgba(37, 211, 102, 0.4);
+    }
+  }
+  
+  @keyframes phoneGlow {
+    0%, 100% {
+      box-shadow: 0 8px 20px rgba(255, 159, 64, 0.4), 0 0 20px rgba(255, 159, 64, 0.2);
+    }
+    50% {
+      box-shadow: 0 12px 30px rgba(255, 159, 64, 0.6), 0 0 40px rgba(255, 159, 64, 0.4);
+    }
+  }
+  
+  .whatsapp-btn {
+    animation: floatingPulse 3s ease-in-out infinite, whatsappGlow 2s ease-in-out infinite;
+  }
+  
+  .phone-btn {
+    animation: floatingPulse 3.2s ease-in-out infinite, phoneGlow 2.2s ease-in-out infinite;
+  }
+`;
+
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = floatingStyles;
+  document.head.appendChild(style);
+}
+
 /**
  * Fixed, thumb-reachable contact bar. On mobile it renders as a full-width
  * bottom bar (the two actions a lead-gen local business cares about most);
@@ -17,16 +63,16 @@ export default function FloatingContactBar() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-display font-semibold py-3.5 text-sm"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-display font-semibold py-3 text-xs hover:brightness-110 transition-all duration-300 active:scale-95"
         >
-          <WhatsAppIcon />
+          <WhatsAppIcon size={18} />
           WhatsApp
         </a>
         <a
           href={`tel:${primaryContact.phone}`}
-          className="flex-1 flex items-center justify-center gap-2 bg-spark-500 text-ink-900 font-display font-semibold py-3.5 text-sm"
+          className="flex-1 flex items-center justify-center gap-2 bg-spark-500 text-ink-900 font-display font-semibold py-3 text-xs hover:brightness-110 transition-all duration-300 active:scale-95"
         >
-          <CallIcon />
+          <CallIcon size={18} />
           Call Now
         </a>
       </div>
@@ -40,16 +86,16 @@ export default function FloatingContactBar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-cardHover hover:scale-105 transition-transform"
+          className="whatsapp-btn w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-cardHover hover:scale-110 transition-transform duration-300"
         >
-          <WhatsAppIcon size={26} />
+          <WhatsAppIcon size={22} />
         </a>
         <a
           href={`tel:${primaryContact.phone}`}
           aria-label="Call the institute"
-          className="w-14 h-14 rounded-full bg-spark-500 text-ink-900 flex items-center justify-center shadow-cardHover hover:scale-105 transition-transform"
+          className="phone-btn w-12 h-12 rounded-full bg-spark-500 text-ink-900 flex items-center justify-center shadow-cardHover hover:scale-110 transition-transform duration-300"
         >
-          <CallIcon size={24} />
+          <CallIcon size={20} />
         </a>
       </div>
     </>

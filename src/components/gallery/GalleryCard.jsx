@@ -9,10 +9,14 @@ export default function GalleryCard({ item }) {
   const gradient = CATEGORY_ACCENTS[item.category] || "from-ink-600 to-ink-900";
 
   return (
-    <figure className="card-base overflow-hidden group">
+    <figure className="card-base group overflow-hidden relative transition-all duration-200 hover:-translate-y-0.5">
+
+      <div className="sheen" aria-hidden="true" />
       <div
+
         className={`aspect-square bg-gradient-to-br ${gradient} flex items-center justify-center relative`}
       >
+
         <span className="font-mono text-xs text-white/70 absolute top-3 left-3">
           #{String(item.id).padStart(2, "0")}
         </span>
@@ -22,7 +26,7 @@ export default function GalleryCard({ item }) {
         <span className="text-xs font-mono text-signal-700 bg-signal-50 px-2 py-0.5 rounded">
           {item.category}
         </span>
-        <p className="mt-2 text-sm text-slate-ink/80">{item.caption}</p>
+        <p className="mt-2 text-sm text-ink-600/80">{item.caption}</p>
       </figcaption>
     </figure>
   );

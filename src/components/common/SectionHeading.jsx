@@ -9,7 +9,7 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
         {title}
       </h2>
       {description && (
-        <p className={`mt-3 text-base md:text-lg ${light ? "text-ink-100/75" : "text-slate-ink/80"}`}>
+        <p className={`mt-3 text-base md:text-lg ${light ? "text-ink-100/75" : "text-ink-600/80"}`}>
           {description}
         </p>
       )}

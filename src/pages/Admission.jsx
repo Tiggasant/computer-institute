@@ -118,13 +118,13 @@ export default function Admission() {
                 <h2 className="font-display font-bold text-xl text-ink-900 mb-2">
                   Application Received!
                 </h2>
-                <p className="text-slate-ink/75 mb-1">
+                <p className="text-ink-600/75 mb-1">
                   Your reference ID is{" "}
                   <span className="font-mono font-semibold text-signal-700">
                     {referenceId}
                   </span>
                 </p>
-                <p className="text-sm text-slate-ink/60 mb-6">
+                <p className="text-sm text-ink-600/60 mb-6">
                   Our admissions team will call you within 24 hours to confirm
                   your seat.
                 </p>
@@ -235,7 +235,7 @@ export default function Admission() {
                     ? "Submitting..."
                     : "Submit Application"}
                 </button>
-                <p className="text-xs text-slate-ink/50 text-center">
+                <p className="text-xs text-ink-600/50 text-center">
                   By submitting, you agree to be contacted by BrightPath
                   Computer Institute regarding admissions.
                 </p>

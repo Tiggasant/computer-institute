@@ -1,7 +1,11 @@
 export default function BranchCard({ branch }) {
   return (
-    <div className="card-base overflow-hidden flex flex-col">
+    <div className="card-base group overflow-hidden flex flex-col relative transition-all duration-200 hover:-translate-y-0.5">
+
+      <div className="sheen" aria-hidden="true" />
       <div className="aspect-video w-full bg-ink-50">
+
+
         <iframe
           title={branch.name}
           src={branch.mapEmbed}
@@ -12,13 +16,13 @@ export default function BranchCard({ branch }) {
       </div>
       <div className="p-6 flex flex-col flex-1">
         <h3 className="font-display font-semibold text-lg text-ink-900 mb-1">{branch.name}</h3>
-        <p className="text-sm text-slate-ink/70 mb-4">{branch.address}</p>
+        <p className="text-sm text-ink-600/70 mb-4">{branch.address}</p>
 
         <ul className="space-y-2 text-sm mb-5">
-          <li className="flex items-center gap-2 text-slate-ink/80">
+          <li className="flex items-center gap-2 text-ink-600/80">
             <ClockIcon /> {branch.timing}
           </li>
-          <li className="flex items-center gap-2 text-slate-ink/80">
+          <li className="flex items-center gap-2 text-ink-600/80">
             <PhoneIcon /> {branch.phone}
           </li>
         </ul>

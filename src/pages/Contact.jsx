@@ -82,7 +82,7 @@ export default function Contact() {
                 <p className="font-display font-semibold text-ink-900 mb-1">
                   Thank you!
                 </p>
-                <p className="text-sm text-slate-ink/75">
+                <p className="text-sm text-ink-600/75">
                   Your message has been received. Our counsellors will contact
                   you shortly.
                 </p>
@@ -215,7 +215,7 @@ export default function Contact() {
               <div className="p-4 border-b border-ink-50">
                 <label
                   htmlFor="mapBranch"
-                  className="text-xs text-slate-ink/60"
+                  className="text-xs text-ink-600/60"
                 >
                   Showing map for
                 </label>

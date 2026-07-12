@@ -13,7 +13,7 @@ export default function NotFound() {
           <h1 className="text-3xl md:text-4xl font-bold text-ink-900 mb-3">
             This page doesn't exist
           </h1>
-          <p className="text-slate-ink/70 mb-8 max-w-md mx-auto">
+          <p className="text-ink-600/70 mb-8 max-w-md mx-auto">
             The page you're looking for may have moved. Head back home or explore our courses.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
